@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中金院社團線上指南</title>
+    
+    <style>
+        /* 啟用平滑滾動功能 */
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0; padding: 0;
+            background-color: #f9f9f9; color: #333;
+        }
+
+        /* 第一層：首頁分段浮現動畫 */
+        .intro-screen {
+            height: 100vh; display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            background: linear-gradient(135deg, #748c7e, #a8baa6); 
+            color: white; text-align: center; padding: 20px; box-sizing: border-box;
+        }
+        .intro-text-container {
+            font-size: clamp(36px, 6vw, 64px); font-weight: bold;
+            letter-spacing: 4px; line-height: 1.6;
+            display: flex; flex-direction: column; gap: 10px; 
+        }
+        .fade-segment {
+            opacity: 0; animation: floatUp 1.2s ease-out forwards;
+        }
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.8s; }
+        .delay-3 { animation-delay: 1.4s; }
+        .scroll-hint {
+            margin-top: 60px; font-size: 18px; letter-spacing: 2px; opacity: 0;
+            animation: fadeIn 2s ease-out 2.5s forwards; 
+        }
+
+        @keyframes floatUp {
+            0% { opacity: 0; transform: translateY(40px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* 引言區塊 (加入社團的好處) */
+        .benefits-section {
+            padding: 100px 20px; background-color: #ffffff;
+            display: flex; justify-content: center; text-align: center;
+        }
+        .benefits-content {
+            max-width: 800px; background-color: #f2f5f3; 
+            padding: 50px 40px; border-radius: 20px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.05);
+        }
+        .benefits-content p {
+            font-size: 20px; line-height: 2.2; color: #4a5f52;
+            margin-bottom: 20px; font-weight: 500;
+        }
+        .benefits-content p:last-child { margin-bottom: 0; }
+
+        /* 選單按鈕區塊 */
+        .menu-section {
+            padding: 80px 20px 100px; background-color: #ffffff;
+            display: flex; flex-direction: column; align-items: center;
+        }
+        .menu-section h2 { color: #4a5f52; font-size: 32px; margin-bottom: 40px; letter-spacing: 1.5px; }
+        .nav-buttons { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; max-width: 900px; }
+        .nav-buttons a {
+            text-decoration: none; color: #5c7465; padding: 15px 35px;
+            border-radius: 40px; border: 2px solid #5c7465; 
+            font-weight: bold; font-size: 20px; transition: all 0.3s ease; background-color: transparent;
+        }
+        .nav-buttons a:hover { background-color: #5c7465; color: white; transform: scale(1.05); }
+
+        /* 滾動區塊設定 (個別社團) */
+        .club-section {
+            padding: 120px 20px; min-height: 50vh; display: flex;
+            flex-direction: column; align-items: center; justify-content: center; text-align: center;
+        }
+        .club-section:nth-child(odd) { background-color: #f2f5f3; }
+        .club-section:nth-child(even) { background-color: #ffffff; }
+        .club-content { max-width: 800px; width: 100%; }
+        .club-content h2 { font-size: 36px; color: #4a5f52; margin-bottom: 30px; letter-spacing: 2px; }
+        .club-content p { font-size: 18px; line-height: 2; color: #444; margin-bottom: 50px; }
+        .action-btn {
+            display: inline-block; text-decoration: none; background-color: #5c7465; 
+            color: white; padding: 15px 40px; border-radius: 35px;
+            font-weight: bold; font-size: 18px; box-shadow: 0 6px 12px rgba(0,0,0,0.15); transition: all 0.3s ease;
+        }
+        .action-btn:hover { opacity: 0.85; transform: translateY(-3px); }
+        .announcement-text {
+            display: inline-block; background-color: #e3e8e5; color: #5c7465;
+            padding: 15px 30px; border-radius: 10px; font-weight: bold; font-size: 18px; border: 2px dashed #a8baa6;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="intro-screen">
+        <div class="intro-text-container">
+            <div class="fade-segment delay-1">中信金融管理學院</div>
+            <div class="fade-segment delay-2">線上社團指南</div>
+        </div>
+        <div class="scroll-hint">▼ 往下滑動探索社團 ▼</div>
+    </div>
+
+    <div class="benefits-section">
+        <div class="benefits-content">
+            <p>大學生活除了上課，當然也要找到自己的圈子✨</p>
+            <p>想打球、玩音樂、認識新朋友，或是培養新的興趣，都可以先從社團開始！</p>
+            <p>學校各社團的 IG 都幫大家整理好了，可以直接點進去看看各社團平常的活動、費用資訊與社團時間的最新動態～<br>還不知道要加哪個社團也沒關係，那就先每個都參加看看😎<br>說不定你的大學生活，就從其中一個社團開始！</p>
+        </div>
+    </div>
+
+    <div class="menu-section">
+        <h2>選擇你想了解的社團</h2>
+        <div class="nav-buttons">
+            <a href="#club1">吉他社</a>
+            <a href="#club2">熱舞社</a>
+            <a href="#club3">桌遊社</a>
+            <a href="#club5">棒球社</a>
+            <a href="#club8">撞球社</a>
+            <a href="#club6">匹克球社</a>
+            <a href="#club4">蔬活玩意社</a>
+            <a href="#club9">高爾夫球社</a>
+            <a href="#club7">法律研究暨服務社</a>
+        </div>
+    </div>
+
+    <div id="club1" class="club-section"><div class="club-content"><h2>吉他社</h2><p>不管是想從零開始學吉他，還是已經會彈想找人一起玩團，都歡迎加入！用音樂認識朋友，也讓大學生活多一點旋律。</p><a href="https://www.instagram.com/ctbc_guitarclub?stkn=b2xsbG9nNG1vc3U=" target="_blank" class="action-btn">追蹤 IG</a></div></div>
+    <div id="club2" class="club-section"><div class="club-content"><h2>熱舞社</h2><p>喜歡跳舞、想挑戰舞台，或只是想跟著音樂動起來，都可以來熱舞社！一起練舞、一起上台，把青春跳得更精彩。</p><a href="https://www.instagram.com/ctbc.dance.club?igsh=eDE0ZThnc3lraGk=" target="_blank" class="action-btn">追蹤 IG</a></div></div>
+    <div id="club3" class="club-section"><div class="club-content"><h2>桌遊社</h2><p>從策略燒腦到輕鬆派對遊戲都有，無論新手還是桌遊老手都能找到同好。想交朋友、想動腦，來桌遊社就對了！</p><a href="https://www.instagram.com/ctbc_board.games.club?igsh=MmdvOTVwZjA3NGMy" target="_blank" class="action-btn">追蹤 IG</a></div></div>
+    <div id="club5" class="club-section"><div class="club-content"><h2>棒球社</h2><p>有棒球底子的你，別讓球棒和手套在大學閒著！加入球隊一起訓練、一起征戰大專盃一般組，把熱血留在球場上。</p><a href="https://www.instagram.com/ctbc_baseball_club?igsh=cnpwdmF1OHozYmN6" target="_blank" class="action-btn">追蹤 IG</a></div></div>
+    <div id="club8" class="club-section"><div class="club-content"><h2>撞球社</h2><p>從瞄準、出桿到走位，每一球都是技巧與策略的較量。無論是休閒玩家還是想精進球技，都歡迎一起來切磋！</p><a href="https://line.me/ti/g/d62dJpaGJ2" target="_blank" class="action-btn">加入 Line 群組</a></div></div>
+    <div id="club6" class="club-section"><div class="club-content"><h2>匹克球社</h2><p>近年超熱門的新興運動，結合網球、羽球與桌球特色，簡單好上手又充滿競技感。想嘗試新運動，就來一起 Pickleball！</p><a href="https://www.instagram.com/ctbcbs_pickleballclub?igsh=d2J6ODd3YzZjeTNi&utm_source=qr" target="_blank" class="action-btn">追蹤 IG</a></div></div>
+    <div id="club4" class="club-section"><div class="club-content"><h2>蔬活玩意社</h2><p>不只蔬食，也不只中餐！從料理到烘焙，一起動手做出各種好吃又有趣的料理，享受從食材到成品的成就感。</p><a href="https://www.instagram.com/vefepme_ctbc?igsh=OWVvZW11ZzVlZDhp" target="_blank" class="action-btn">追蹤 IG</a></div></div>
+    <div id="club9" class="club-section"><div class="club-content"><h2>高爾夫球社</h2><p>想找一項能讓自己靜下來的運動嗎？高爾夫講究的不只是技巧，更是耐心、專注與節奏，一起在揮桿中享受沉著與成就感。</p><span class="announcement-text">詳細課程資訊將於新生大群公告</span></div></div>
+    <div id="club7" class="club-section"><div class="club-content"><h2>法律研究暨服務社</h2><p>法律迷的交流基地！一起討論生活中的法律議題、熱門案件與實務個案，和同樣對法律有興趣的人交換不同觀點。</p><a href="https://www.instagram.com/lsrs_ctbc?igsh=eG1vNmI1d3I5a2N3&utm_source=qr" target="_blank" class="action-btn">追蹤 IG</a></div></div>
+
+</body>
+</html>
