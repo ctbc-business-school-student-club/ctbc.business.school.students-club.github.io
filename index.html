@@ -29,12 +29,15 @@
         .fade-segment {
             opacity: 0; animation: floatUp 1.2s ease-out forwards;
         }
+        
+        /* 調整動畫延遲設定 */
         .delay-1 { animation-delay: 0.2s; }
         .delay-2 { animation-delay: 0.8s; }
-        .delay-3 { animation-delay: 1.4s; }
+        
         .scroll-hint {
             margin-top: 60px; font-size: 18px; letter-spacing: 2px; opacity: 0;
-            animation: fadeIn 2s ease-out 2.5s forwards; 
+            /* 配合標題變為兩段，將下滑提示出現的時間提早到 2 秒 */
+            animation: fadeIn 2s ease-out 2s forwards; 
         }
 
         @keyframes floatUp {
@@ -48,12 +51,12 @@
 
         /* 引言區塊 (加入社團的好處) */
         .benefits-section {
-            padding: 100px 20px; background-color: #ffffff;
+            padding: 100px 20px; background-color: #f8f9f8;
             display: flex; justify-content: center; text-align: center;
         }
         .benefits-content {
             max-width: 800px; background-color: #f2f5f3; 
-            padding: 50px 40px; border-radius: 20px;
+            padding: 50px 40px; border-radius: 12px; 
             box-shadow: 0 8px 16px rgba(0,0,0,0.05);
         }
         .benefits-content p {
@@ -64,14 +67,14 @@
 
         /* 選單按鈕區塊 */
         .menu-section {
-            padding: 80px 20px 100px; background-color: #ffffff;
+            padding: 80px 20px 100px; background-color: #f8f9f8;
             display: flex; flex-direction: column; align-items: center;
         }
         .menu-section h2 { color: #4a5f52; font-size: 32px; margin-bottom: 40px; letter-spacing: 1.5px; }
         .nav-buttons { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; max-width: 900px; }
         .nav-buttons a {
             text-decoration: none; color: #5c7465; padding: 15px 35px;
-            border-radius: 40px; border: 2px solid #5c7465; 
+            border-radius: 8px; border: 2px solid #5c7465; 
             font-weight: bold; font-size: 20px; transition: all 0.3s ease; background-color: transparent;
         }
         .nav-buttons a:hover { background-color: #5c7465; color: white; transform: scale(1.05); }
@@ -82,26 +85,32 @@
             flex-direction: column; align-items: center; justify-content: center; text-align: center;
         }
         .club-section:nth-child(odd) { background-color: #f2f5f3; }
-        .club-section:nth-child(even) { background-color: #ffffff; }
+        .club-section:nth-child(even) { background-color: #f8f9f8; }
         .club-content { max-width: 800px; width: 100%; }
         .club-content h2 { font-size: 36px; color: #4a5f52; margin-bottom: 30px; letter-spacing: 2px; }
         .club-content p { font-size: 18px; line-height: 2; color: #444; margin-bottom: 50px; }
+        
+        /* 統一風格的行動按鈕 (IG/Line) */
         .action-btn {
             display: inline-block; text-decoration: none; background-color: #5c7465; 
-            color: white; padding: 15px 40px; border-radius: 35px;
+            color: white; padding: 15px 40px; border-radius: 8px;
             font-weight: bold; font-size: 18px; box-shadow: 0 6px 12px rgba(0,0,0,0.15); transition: all 0.3s ease;
         }
         .action-btn:hover { opacity: 0.85; transform: translateY(-3px); }
+        
+        /* 無連結時的公告文字標籤 */
         .announcement-text {
             display: inline-block; background-color: #e3e8e5; color: #5c7465;
-            padding: 15px 30px; border-radius: 10px; font-weight: bold; font-size: 18px; border: 2px dashed #a8baa6;
+            padding: 15px 30px; border-radius: 8px; font-weight: bold; font-size: 18px; border: 2px dashed #a8baa6;
         }
     </style>
 </head>
 <body>
 
+    <!-- 更新後的第一層：首頁分段浮現動畫 -->
     <div class="intro-screen">
         <div class="intro-text-container">
+            <!-- 更改為兩段式標題 -->
             <div class="fade-segment delay-1">中信金融管理學院</div>
             <div class="fade-segment delay-2">線上社團指南</div>
         </div>
@@ -124,13 +133,24 @@
             <a href="#club3">桌遊社</a>
             <a href="#club5">棒球社</a>
             <a href="#club8">撞球社</a>
+            <a href="#club11">攝影社</a>
+            <a href="#club13">羽球社</a>
+            <a href="#club16">木球社</a>
+            <a href="#club19">愛樂社</a>
             <a href="#club6">匹克球社</a>
+            <a href="#club18">跆拳道隊</a>
             <a href="#club4">蔬活玩意社</a>
             <a href="#club9">高爾夫球社</a>
+            <a href="#club15">女子排球隊</a>
+            <a href="#club17">女子足球隊</a>
+            <a href="#club14">男子籃球隊一般組</a>
             <a href="#club7">法律研究暨服務社</a>
+            <a href="#club10">親善大使暨表演社</a>
+            <a href="#club12">運動傷害防護與體能訓練社</a>
         </div>
     </div>
 
+    <!-- 19 個社團介紹區塊 -->
     <div id="club1" class="club-section"><div class="club-content"><h2>吉他社</h2><p>不管是想從零開始學吉他，還是已經會彈想找人一起玩團，都歡迎加入！用音樂認識朋友，也讓大學生活多一點旋律。</p><a href="https://www.instagram.com/ctbc_guitarclub?stkn=b2xsbG9nNG1vc3U=" target="_blank" class="action-btn">追蹤 IG</a></div></div>
     <div id="club2" class="club-section"><div class="club-content"><h2>熱舞社</h2><p>喜歡跳舞、想挑戰舞台，或只是想跟著音樂動起來，都可以來熱舞社！一起練舞、一起上台，把青春跳得更精彩。</p><a href="https://www.instagram.com/ctbc.dance.club?igsh=eDE0ZThnc3lraGk=" target="_blank" class="action-btn">追蹤 IG</a></div></div>
     <div id="club3" class="club-section"><div class="club-content"><h2>桌遊社</h2><p>從策略燒腦到輕鬆派對遊戲都有，無論新手還是桌遊老手都能找到同好。想交朋友、想動腦，來桌遊社就對了！</p><a href="https://www.instagram.com/ctbc_board.games.club?igsh=MmdvOTVwZjA3NGMy" target="_blank" class="action-btn">追蹤 IG</a></div></div>
@@ -140,6 +160,16 @@
     <div id="club4" class="club-section"><div class="club-content"><h2>蔬活玩意社</h2><p>不只蔬食，也不只中餐！從料理到烘焙，一起動手做出各種好吃又有趣的料理，享受從食材到成品的成就感。</p><a href="https://www.instagram.com/vefepme_ctbc?igsh=OWVvZW11ZzVlZDhp" target="_blank" class="action-btn">追蹤 IG</a></div></div>
     <div id="club9" class="club-section"><div class="club-content"><h2>高爾夫球社</h2><p>想找一項能讓自己靜下來的運動嗎？高爾夫講究的不只是技巧，更是耐心、專注與節奏，一起在揮桿中享受沉著與成就感。</p><span class="announcement-text">詳細課程資訊將於新生大群公告</span></div></div>
     <div id="club7" class="club-section"><div class="club-content"><h2>法律研究暨服務社</h2><p>法律迷的交流基地！一起討論生活中的法律議題、熱門案件與實務個案，和同樣對法律有興趣的人交換不同觀點。</p><a href="https://www.instagram.com/lsrs_ctbc?igsh=eG1vNmI1d3I5a2N3&utm_source=qr" target="_blank" class="action-btn">追蹤 IG</a></div></div>
+    <div id="club10" class="club-section"><div class="club-content"><h2>親善大使暨表演社</h2><p>大型活動中最亮眼的門面之一！除了協助校內重要活動，也會安排美姿美儀、儀態訓練與妝法教學，培養自信與舞台感。</p><span class="announcement-text">詳細資訊請洽：社長 財金系陳淨璃</span></div></div>
+    <div id="club11" class="club-section"><div class="club-content"><h2>攝影社</h2><p>喜歡看運動賽事，也喜歡用鏡頭捕捉精彩瞬間嗎？攝影社以運動賽事拍攝為主，現場還有圖資長親自指導拍攝技巧與實務經驗，適合想邊看比賽、邊練攝影的你！</p><span class="announcement-text">詳細資訊請洽：圖資處 蔡芝穎圖資長</span></div></div>
+    <div id="club12" class="club-section"><div class="club-content"><h2>運動傷害防護與體能訓練社</h2><p>從運動防護、體能訓練到基礎觀念，一起更科學地認識身體與運動表現，適合喜歡運動、訓練與健康相關知識的你。</p><a href="https://www.instagram.com/ctbc_scat_team?stkn=eG1vM3Z3NmN0emhq" target="_blank" class="action-btn">追蹤 IG</a></div></div>
+    <div id="club13" class="club-section"><div class="club-content"><h2>羽球社</h2><p>想找球友、動一動，或是單純喜歡羽球都歡迎加入！一起揮拍、交流球技，也在球場上認識更多朋友。</p><span class="announcement-text">詳細資訊請洽：企管系 羅宇晴</span></div></div>
+    <div id="club14" class="club-section"><div class="club-content"><h2>男子籃球隊一般組</h2><p>有籃球底子的你，歡迎一起加入球隊訓練、挑戰大專盃，讓你的名字留在大專盃獎狀上！</p><a href="https://www.instagram.com/ctbcbs_basketball?stkn=dDN2OWx5cjF1aWtt" target="_blank" class="action-btn">追蹤 IG</a></div></div>
+    <div id="club15" class="club-section"><div class="club-content"><h2>女子排球隊</h2><p>喜歡排球、享受團隊合作與場上對抗的快感，從練習到比賽，在每一次攻防中累積默契。隊內也有校隊成員一起訓練，不論是提升球技或累積比賽經驗都歡迎一起加入排球隊。</p><a href="https://www.instagram.com/ctbc_volleyball_?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==" target="_blank" class="action-btn">追蹤 IG</a></div></div>
+    <div id="club16" class="club-section"><div class="club-content"><h2>木球社</h2><p>想嘗試不一樣的球類運動嗎？木球結合技巧、穩定與策略，節奏不快卻很考驗精準度，適合想接觸新興運動的你。</p><span class="announcement-text">詳細資訊請洽：社長 金管系何予又</span></div></div>
+    <div id="club17" class="club-section"><div class="club-content"><h2>女子足球隊</h2><p>速度、跑動與團隊配合的足球活動，加入我們女子足球隊吧！一起在球場上享受攻守轉換與並肩作戰的熱血。</p><a href="https://www.instagram.com/ctbc_football?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==" target="_blank" class="action-btn">追蹤 IG</a></div></div>
+    <div id="club18" class="club-section"><div class="club-content"><h2>跆拳道隊</h2><p>從基本動作、體能到實戰訓練，跆拳道不只鍛鍊身體，也訓練反應、專注與意志力，歡迎一起挑戰自己。</p><a href="https://www.instagram.com/ctbcbs.tkd?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==" target="_blank" class="action-btn">追蹤 IG</a></div></div>
+    <div id="club19" class="club-section"><div class="club-content"><h2>愛樂社</h2><p>喜歡管弦樂器與合奏的你，歡迎一起加入中信樂團！平時透過排練培養默契，也有機會在開學音樂會、畢業典禮等重要場合登台演奏。</p><span class="announcement-text">詳細資訊請洽：黃渝臻系秘</span></div></div>
 
 </body>
 </html>
